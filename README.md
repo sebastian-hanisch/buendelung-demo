@@ -1,9 +1,8 @@
 # Bündeln und seine Grenzen: wann reicht Zusammenlegen, und wann nicht? – Streamlit-Demo
 
-<!-- Nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-buendelung-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-buendelung-demo.streamlit.app/)**
 
-Stück der Linie **Gemeinsam gewinnen** (Arbeitsname; Name, Bereich und Themenfeld werden erst bei der Einbindung in die Website festgelegt) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Wurzel der Linie ist `kuchen-vergroessern-demo` (noch ohne Link); diese Demo ist ihr Nachfolger mit der Kante *idee*: eine andere Quelle des Überschusses, nämlich der Größenvorteil des Zusammenlegens statt verschieden gewichteter Punkte.
+Stück der Linie **Gemeinsam gewinnen** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Wurzel der Linie ist `kuchen-vergroessern-demo` (noch ohne Link); diese Demo ist ihr Nachfolger mit der Kante *idee*: eine andere Quelle des Überschusses, nämlich der Größenvorteil des Zusammenlegens statt verschieden gewichteter Punkte.
 
 Vehikel: n Standorte mit je einem Lager für Ersatzteile und unabhängiger wöchentlicher Nachfrage (Mittelwert 100, Skala 20). Entweder hält jeder einen eigenen Sicherheitsbestand, oder ein gemeinsames Lager bedient alle. „Allianz“ ist hier ein reiner Modellbegriff.
 
@@ -54,7 +53,7 @@ Nur die gewählten Verteilungsfamilien, Skala 20, gleiche Standorte, unabhängig
 
 ## Tests
 
-138 Tests (`pytest --collect-only -q tests`), : Einheiten gegen Handrechnung (Mini-Beispiel: diskrete Nachfrage 0 bis 3, n = 2, Servicegrad 0,9, V = 1,5), **Orakel** (`tests/test_oracle_buendelung.py`: Normal gegen √n, Summe schwerer Verteilungen gegen die Faltung der `scipy.stats`-Dichten und gegen Monte Carlo, Gleichkorrelation gegen simulierte Normalvektoren mit `scipy.stats.multivariate_normal`, Quantilfunktion und exakte Faltung gegen `numpy.quantile` auf der Aufzählung), Randfälle (n = 1, n = 2, ungültige Parameter, nicht positiver gemeinsamer Bestand, Reglerränder), Verdikte (jede Schwelle, jedes Preset), Zahlen (`test_claims.py`), kopierter Zufallsbaustein, Layout, Permalink, AppTest.
+138 Tests (`pytest --collect-only -q tests`): Einheiten gegen Handrechnung (Mini-Beispiel: diskrete Nachfrage 0 bis 3, n = 2, Servicegrad 0,9, V = 1,5), **Orakel** (`tests/test_oracle_buendelung.py`: Normal gegen √n, Summe schwerer Verteilungen gegen die Faltung der `scipy.stats`-Dichten und gegen Monte Carlo, Gleichkorrelation gegen simulierte Normalvektoren mit `scipy.stats.multivariate_normal`, Quantilfunktion und exakte Faltung gegen `numpy.quantile` auf der Aufzählung), Randfälle (n = 1, n = 2, ungültige Parameter, nicht positiver gemeinsamer Bestand, Reglerränder), Verdikte (jede Schwelle, jedes Preset), Zahlen (`test_claims.py`), kopierter Zufallsbaustein, Layout, Permalink, AppTest.
 
 ## Dateistruktur
 
