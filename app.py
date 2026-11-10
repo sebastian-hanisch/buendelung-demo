@@ -75,6 +75,17 @@ Weiter unten: fünf **🔬 Experimente**, **🚧 Wo die Annahmen enden**, **⚠�
 """
 )
 
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/buendeln-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Mehrere **Standorte** halten je ein Lager für Ersatzteile. Entweder hält jeder einen eigenen **Sicherheitsbestand**, oder ein **gemeinsames Lager** bedient alle. Weil sich Ausschläge nach oben und unten teilweise ausgleichen, braucht das gemeinsame Lager weniger als alle Einzelbestände zusammen. Die **Wurzelregel** sagt: Der **Bündelungsvorteil** wächst wie die Wurzel aus der Zahl der Standorte. Das gilt exakt nur bei der Normalverteilung (der klassischen Glockenform) und unabhängiger Nachfrage. Die Demo misst, wie weit die Regel bei **seltenen Riesenausschlägen** (schwerer Tail), bei **gleichläufiger Nachfrage** und bei hohem **Servicegrad** reicht und wo nicht. Sie rechnet dafür mit erfundenen Verteilungen und einem Lager ohne Kosten des Zusammenlegens, nicht mit echten Daten.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/buendeln-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
+
 with st.expander("So funktioniert Bündeln", expanded=True):
     st.markdown(
         """
@@ -290,6 +301,7 @@ with st.expander("⚠️ Annahmen, Grenzen und bekannte Probleme"):
     )
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/buendeln-erklaert.json, nicht von Hand ändern)
     st.markdown(
         r"""
 **Lesehilfe.** Gegeben sind $n$ Standorte mit unabhängiger, gleich verteilter Nachfrage $D_i$ (Mittelwert $\mu$) und ein Servicegrad $q$. Gesucht ist der Bündelungsvorteil $V(n)$.
@@ -305,7 +317,14 @@ with st.expander("📐 Mathematische Formulierung"):
 | $V$ | Bündelungsvorteil |
 | $\rho$ | Gleichkorrelation (nur Normal) |
 | $\alpha$ | Tail-Index: $P(D > x) \sim x^{-\alpha}$ |
+| $\sigma$, $z_q$ | Standardabweichung der Nachfrage eines Standorts; Normal-Quantil zum Servicegrad $q$ |
 
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/buendeln-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
+    st.markdown(
+        r"""
 **Sicherheitsbestand und Vorteil.**
 
 $$SB_1 = F^{-1}(q) - \mu$$
